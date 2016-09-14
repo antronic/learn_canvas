@@ -1,0 +1,31 @@
+{
+  "name": "learn_canvas",
+  "version": "1.0.0",
+  "description": "canvas is the element that used to draw graphics on a web page.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antronic/learn_canvas.git"
+  },
+  "keywords": [
+    "canvas",
+    "html5",
+    "html5",
+    "canvas"
+  ],
+  "author": "Jirachai Chansivanon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/antronic/learn_canvas/issues"
+  },
+  "homepage": "https://github.com/antronic/learn_canvas#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "bower": "^1.7.9",
+    "ejs": "^2.5.2",
+    "express": "^4.14.0"
+  }
+}

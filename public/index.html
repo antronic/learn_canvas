@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap.min.css">
+	<title>Learn HTML5 Canvas</title>
+	<style type="text/css">
+		#lesson{
+			margin-top: 2em;
+		}
+	</style>
+</head>
+<body>
+	<div class="col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1">
+		<h2>Lesson</h2>
+		<div id="lesson" class="container-fluid">
+			<ul class="list-group">
+
+			</ul>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="/libs/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$.getJSON( "/lesson", function( lessons ) {
+			var html = "";
+		  $.each( lessons, function( key, val ) {
+				if(val.charAt(0) == '0'){
+					html += '<a href="'
+					html += '/lesson/'+val;
+					html += '" class="list-group-item row">';;
+					html += val;
+					html += '</a>';
+				}
+		  });
+
+			$("#lesson ul").html(html);
+		});
+	});
+</script>
+</html>
