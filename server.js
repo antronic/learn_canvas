@@ -17,6 +17,9 @@ server.listen('3000' | process.env.PORT, function(){
 });
 
 app.use('/lesson/:lesson', function(req, res, next){
+	if(req.params.lesson == null){
+		res.redirect('/');
+	}
 	console.log("go to lesson " + req.params.lesson);
 	res.redirect('/'+req.params.lesson);
 });
