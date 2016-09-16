@@ -26,6 +26,10 @@ function loadImage(){
 //     $("#protect").height = ch;
 // }
 
+$('img, canvas').bind('contextmenu', function(e) {
+    return false;
+});
+
 function writeText(){
     ctx1.font = '20px Helvetica';
     ctx1.fillStyle = '#FFF';
