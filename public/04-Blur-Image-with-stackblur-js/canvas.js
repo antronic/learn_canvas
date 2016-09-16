@@ -18,9 +18,33 @@ function loadImage(){
     ctx1.drawImage(image, posX, 0, i_width, canvas1.height );
     writeText();
 }
+// protect();
+// function protect(){
+//     var cw = $("#canvas").width;
+//     var ch = $("#canvas").height;
+//     $("#protect").width = cw;
+//     $("#protect").height = ch;
+// }
 
 function writeText(){
     ctx1.font = '20px Helvetica';
     ctx1.fillStyle = '#FFF';
     ctx1.fillText("Hello", 100, 40);
 }
+
+function download(link, href, filename){
+    var a = $("<a>").attr("href", href).attr("download", filename).appendTo("body");
+    a[0].click();
+    a.remove();
+}
+
+$("#download").click(function(){
+    var link = document.getElementById("canvas1").toDataURL('image/jpg');
+    var href;
+    var filename = "camp1.jpg";
+    $.post('/decode_base64', {"photo" : link, "filename" : filename}, function(callback){
+        // href = callback;
+        // download(this, href, filename);
+        console.log(callback)
+    });
+});
