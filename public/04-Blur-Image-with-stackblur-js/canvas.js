@@ -45,10 +45,13 @@ function download(link, href, filename){
 $("#download").click(function(){
     var link = document.getElementById("canvas1").toDataURL('image/jpg');
     var href;
-    var filename = "camp1.jpg";
+    var filename_input = $("#filename").val();
+    if(filename_input == ''){
+        filename_input = "untitled";
+    }
+    var filename = filename_input + ".jpg";
     $.post('/decode_base64', {"photo" : link, "filename" : filename}, function(callback){
-        // href = callback;
-        // download(this, href, filename);
-        console.log(callback)
+        href = callback;
+        download(this, href, filename);
     });
 });
